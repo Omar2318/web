@@ -1,0 +1,35 @@
+<div class="p-5 mb-4 bg-warning rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">{{myName}}</h1>
+        <p class="col-md-8 fs-4">
+            Hola, esoty aprendiendo a usar Angular
+        </p>
+        <button class="btn btn-primary btn-lg" type="button" (click)="verInformacion()">
+           {{verInfo ? 'Ocultar': 'Ver info'}}
+        </button>
+    </div>
+</div>
+
+@if (verInfo) {
+    <!-- Some borders are removed -->
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Correo: {{information.emial}} </li>
+        <li class="list-group-item">Telefono: {{information.phone}} </li>
+        <li class="list-group-item">Nacionalidad: {{information.nationality}} </li>
+        <li class="list-group-item">Framework: {{information.favorite_framework}} </li>
+    </ul>
+}
+
+
+<h2 class="fw-bold text-center">Titulo</h2>
+
+<hr>
+
+<ul class="list-group list-group-flush">
+
+@for (banda of bandas; track $index) {
+    <li class="list-group-item"> {{banda}} </li>
+
+}
+
+</ul>
