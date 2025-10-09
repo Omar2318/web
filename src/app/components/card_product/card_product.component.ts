@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, Input } from '@angular/core
 import { Product, ProductFake } from '../../app.interface';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { FavoritesService } from '../../services/favorites.service';
 
 @Component({
   selector: 'app-card-product',
@@ -19,7 +20,7 @@ import { Router } from '@angular/router';
                         <i class="bi bi-cart"></i>
                     </button>
                         
-                    <button type="button" class="btn btn-danger ms-2">
+                    <button (click)="toFavorite(product)" type="button" class="btn btn-danger ms-2">
                         <i class="bi bi-heart-fill"></i>
                     </button>
 
@@ -39,9 +40,14 @@ export class CardProductComponent {
   @Input({ required: true })
   product!: ProductFake;
   private _router = inject(Router);
-  
+  private _favoritesS = inject(FavoritesService);
+
   goToDetail(id: number){
     console.log('ir a detalles');
     this._router.navigateByUrl('products/'+id);
+  }
+
+  toFavorite(product: ProductFake){
+    this._favoritesS.saveInFavorites(product);
   }
 } 

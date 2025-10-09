@@ -23,7 +23,7 @@ export class Navbar {
       route: '/acercade'
     },
     {
-      name: 'Productos',
+      name: 'Favoritos',
       route: '/productos'
     }
   ];
