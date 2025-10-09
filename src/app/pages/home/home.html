@@ -1,9 +1,16 @@
 <div class="container-fluid">
-    <div class="row">
-            @for (product of products; track product.id) {
-                <div class="col-12 col-sm-6 col-md-3 col-lg-2 mt-3">
-                    <app-card-product [product]="product"/>
-                </div>
-            }
-    </div>
+  <div class="row">
+    @for (product of products; track product.id) {
+      <div class="col-12 col-sm-6 col-md-3 col-lg-2 mt-3 text-center">
+
+        @if (product.rating.rate > 3) {
+          <div class="badge bg-success mb-2">
+            Best Product
+          </div>
+        }
+
+        <app-card-product [product]="product" />
+      </div>
+    }
+  </div>
 </div>
