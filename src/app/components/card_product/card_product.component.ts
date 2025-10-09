@@ -3,7 +3,7 @@ import { Product, ProductFake } from '../../app.interface';
 import { CurrencyPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { FavoritesService } from '../../services/favorites.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-card-product',
   imports: [CurrencyPipe],
@@ -49,5 +49,13 @@ export class CardProductComponent {
 
   toFavorite(product: ProductFake){
     this._favoritesS.saveInFavorites(product);
+     Swal.fire({
+      text: 'Añadido a favoritos',
+      icon: 'success',
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 1300
+     });
   }
 } 
