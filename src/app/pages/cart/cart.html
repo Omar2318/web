@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    @for (cart of carts; track cart.id) {
+      <div class="col-12 col-sm-6 col-md-3 col-lg-2 mt-3 text-center">
+
+        <div class="card shadow rounded">
+                <div class="card-body">
+
+                    <h4 class="card-title">Carrito {{cart.id}}</h4>
+                    <h4 class="card-title">Usuario {{cart.userId}}</h4>
+                    <p class="card-title">Fecha {{cart.date}}</p>
+                   
+                    <p class="card-title">Productos:</p>
+                    @for (product of cart.products; track product.productId) {
+                      <p class="card-text">Producto {{product.productId}} - Cantidad: {{product.quantity}}</p>
+                    }
+                    
+                    <button type="button" class="btn btn-success">
+                        <i class="bi bi-cart"></i>
+                    </button>
+            
+                </div>
+            </div>
+      
+      </div>
+    }
+
+  </div>
+</div>

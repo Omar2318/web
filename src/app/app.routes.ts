@@ -3,6 +3,7 @@ import { Home } from './pages/home/home';
 import { Acercade } from './pages/acercade/acercade';
 import { Productos } from './pages/productos/productos';
 import { ProductDetailComponent } from './pages/product_detail/product_detail.component';
+import { Cart } from './pages/cart/cart';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,10 @@ export const routes: Routes = [
     {
         path: 'products/:id',
         component: ProductDetailComponent,
+    },
+    {
+        path: 'cart',
+        component: Cart,
     },
     {
         path: '**',

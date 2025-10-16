@@ -25,6 +25,10 @@ export class Navbar {
     {
       name: 'Favoritos',
       route: '/productos'
+    },
+    {
+      name: 'cart',
+      route: '/cart'
     }
   ];
 }
